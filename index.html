@@ -1,99 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nexora Studio — AI-powered marketing and creative studio.">
-<title>Nexora Studio | AI Marketing & Creative Studio</title>
-<style>
-:root{--bg:#07090d;--card:#10141c;--text:#f5f7fb;--muted:#9da7b8;--line:#202633;--accent:#7c5cff;--accent2:#20d9ff;--max:1120px}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 80% 0%,#17112d 0,transparent 32%),var(--bg);color:var(--text);line-height:1.6}
-a{text-decoration:none;color:inherit}.wrap{width:min(92%,var(--max));margin:auto}
-nav{position:sticky;top:0;z-index:10;background:rgba(7,9,13,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.navin{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800}
-.mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:900}
-.links{display:flex;gap:26px;color:#cbd2df;font-size:14px}.links a:hover{color:#fff}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:.2s}.btn.primary{background:linear-gradient(135deg,var(--accent),#9b5cff);border:0}.btn:hover{transform:translateY(-2px)}
-.hero{padding:105px 0 85px;text-align:center}.eyebrow{display:inline-block;padding:7px 12px;border:1px solid #2a3140;border-radius:999px;color:#bfc8d8;background:#0d1118;font-size:13px;margin-bottom:22px}
-h1{font-size:clamp(45px,8vw,86px);line-height:.98;letter-spacing:-4px;max-width:900px;margin:auto}.grad{background:linear-gradient(90deg,#fff,var(--accent2),#b07cff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:690px;margin:25px auto 30px;color:var(--muted);font-size:18px}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-section{padding:82px 0}.section-head{max-width:700px;margin-bottom:38px}.kicker{color:#9b8cff;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:2px}
-h2{font-size:clamp(30px,5vw,48px);line-height:1.05;letter-spacing:-2px;margin:10px 0}.sub{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,#111620,#0d1118);border:1px solid var(--line);border-radius:20px;padding:25px}
-.icon{font-size:27px;margin-bottom:18px}.card h3{font-size:19px;margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
-.work{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.mock{overflow:hidden;min-height:420px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(180deg,#111620,#0d1118);display:flex;flex-direction:column}.mock-img{width:100%;height:330px;object-fit:cover;display:block}.mock-info{padding:20px;display:flex;flex-direction:column;gap:7px}.mock-link{display:inline-flex;align-items:center;gap:6px;color:#b7adff;font-size:13px;font-weight:700;margin-top:5px}.mock-link:hover{color:#fff}
-.mock small{color:#aeb7c7}.mock strong{font-size:28px;line-height:1.05;max-width:220px}
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:22px;border-top:1px solid var(--line)}.num{font-size:12px;color:#8f7cff;font-weight:800}.step h3{margin:8px 0 5px}.step p{color:var(--muted);font-size:14px}
-.cta{padding:55px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,#121827,#0d1118)}
-footer{padding:30px 0 45px;border-top:1px solid var(--line);color:#8993a5;font-size:13px}.footerin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:800px){.links{display:none}.grid,.work{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.hero{padding:80px 0 60px}h1{letter-spacing:-2.5px}}
-@media(max-width:520px){.process{grid-template-columns:1fr}.cta{padding:30px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nexora Studio | AI Marketing & Creative Studio</title>
+  <meta name="description" content="Nexora Studio helps brands grow with AI marketing, creative design, social media content and digital solutions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.95);
+      border-bottom: 1px solid #222;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(139,92,246,0.25), transparent 35%),
+        #080808;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid #333;
+      border-radius: 30px;
+      color: #c4b5fd;
+      font-size: 13px;
+      margin-bottom: 25px;
+      background: rgba(139,92,246,0.08);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.3s;
+      border: 1px solid #333;
+    }
+
+    .btn-primary {
+      background: #8b5cf6;
+      border-color: #8b5cf6;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #151515;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #999;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #101010;
+      border: 1px solid #222;
+      padding: 30px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #8b5cf6;
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* PRICING */
+    .pricing-section {
+      background: #0b0b0b;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      position: relative;
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 18px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-7px);
+      border-color: #8b5cf6;
+    }
+
+    .popular {
+      border: 2px solid #8b5cf6;
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #8b5cf6;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .pricing-card h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: 800;
+      margin: 10px 0 20px;
+    }
+
+    .price span {
+      font-size: 14px;
+      color: #888;
+      font-weight: normal;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    .features li {
+      color: #bbb;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: #a78bfa;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .pricing-card .btn {
+      text-align: center;
+      width: 100%;
+    }
+
+    /* WORK */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .work-card {
+      overflow: hidden;
+      border-radius: 15px;
+      border: 1px solid #222;
+      background: #111;
+    }
+
+    .work-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .work-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .work-info {
+      padding: 15px;
+    }
+
+    .work-info h3 {
+      font-size: 17px;
+    }
+
+    .work-info p {
+      color: #888;
+      font-size: 13px;
+    }
+
+    /* PROCESS */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      text-align: center;
+      padding: 25px;
+      background: #101010;
+      border: 1px solid #222;
+      border-radius: 15px;
+    }
+
+    .process-number {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #8b5cf6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-weight: bold;
+    }
+
+    .process-card p {
+      color: #888;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    /* ENQUIRY */
+    .enquiry-section {
+      background: #0b0b0b;
+    }
+
+    .form-wrapper {
+      max-width: 750px;
+      margin: auto;
+      background: #111;
+      border: 1px solid #242424;
+      border-radius: 18px;
+      padding: 35px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px;
+      background: #080808;
+      border: 1px solid #333;
+      color: white;
+      border-radius: 8px;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #8b5cf6;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      text-align: center;
+      max-width: 750px;
+      margin: auto;
+      padding: 55px 30px;
+      border: 1px solid #292929;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at center, rgba(139,92,246,0.12), transparent 55%),
+        #101010;
+    }
+
+    .contact-box h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #999;
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid #222;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .nav-inner {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .contact-box h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-wrapper {
+        padding: 22px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav><div class="wrap navin">
-<a class="brand" href="#top"><span class="mark">N</span><span>Nexora Studio</span></a>
-<div class="links"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
-<a class="btn primary" href="https://www.instagram.com/nexorastudio.labs/" target="_blank" rel="noopener">Let's Talk</a>
-</div></nav>
 
-<main id="top">
-<section class="hero"><div class="wrap">
-<span class="eyebrow">AI-Powered Marketing & Creative Studio</span>
-<h1>Make your brand <span class="grad">impossible to ignore.</span></h1>
-<p>Nexora Studio helps businesses create smarter marketing with AI-powered content, scroll-stopping design and practical digital solutions.</p>
-<div class="actions"><a class="btn primary" href="#contact">Start a Project</a><a class="btn" href="#work">See Our Work</a></div>
-</div></section>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-inner">
 
-<section id="services"><div class="wrap">
-<div class="section-head"><div class="kicker">What we do</div><h2>Creative work built for growth.</h2><p class="sub">Smart, practical creative and marketing support for businesses that want a stronger online presence.</p></div>
-<div class="grid">
-<article class="card"><div class="icon">🤖</div><h3>AI Marketing</h3><p>AI-assisted campaign ideas, content systems and marketing workflows designed around your business.</p></article>
-<article class="card"><div class="icon">🎨</div><h3>Poster & Creative Design</h3><p>Promotional posters, offers, launches and social creatives made to stand out in crowded feeds.</p></article>
-<article class="card"><div class="icon">📱</div><h3>Social Media Content</h3><p>Content concepts, captions, reels ideas and branded posts for a consistent social presence.</p></article>
-<article class="card"><div class="icon">✨</div><h3>Branding</h3><p>Logo direction, visual identity and simple brand systems that make your business look consistent.</p></article>
-<article class="card"><div class="icon">📈</div><h3>Digital Marketing</h3><p>Practical marketing support focused on reach, engagement, enquiries and customer growth.</p></article>
-<article class="card"><div class="icon">💻</div><h3>Digital Solutions</h3><p>Landing pages and lightweight digital experiences that give your business a professional online home.</p></article>
-</div></div></section>
+      <a href="#home" class="logo">
+        Nexora<span>Studio</span>
+      </a>
 
-<section id="work"><div class="wrap">
-<div class="section-head"><div class="kicker">Selected concepts</div><h2>Ideas that look ready to launch.</h2><p class="sub">A few sample creatives showing how Nexora turns ideas into polished, launch-ready marketing assets.</p></div>
-<div class="work">
-<article class="mock">
-<img class="mock-img" src="jewellery-poster.png" alt="Festival jewellery sale poster concept" loading="lazy">
-<div class="mock-info"><small>CONCEPT 01 · JEWELLERY</small><strong>Premium festival creative designed to drive store visits.</strong><small>Brand + Social Creative</small><a class="mock-link" href="jewellery-poster.png" target="_blank" rel="noopener">View full design ↗</a></div>
-</article>
-<article class="mock">
-<img class="mock-img" src="food-poster.png" alt="Fresh Crave Foods promotional poster concept" loading="lazy">
-<div class="mock-info"><small>CONCEPT 02 · FOOD BRAND</small><strong>Fresh food visuals built to make customers stop scrolling.</strong><small>AI Creative Direction</small><a class="mock-link" href="food-poster.png" target="_blank" rel="noopener">View full design ↗</a></div>
-</article>
-<article class="mock">
-<img class="mock-img" src="boutique-poster.png" alt="Maison D'Elegance Boutique seasonal sale poster concept" loading="lazy">
-<div class="mock-info"><small>CONCEPT 03 · BOUTIQUE</small><strong>Editorial-style campaign creative for a modern retail brand.</strong><small>Marketing + Visual Design</small><a class="mock-link" href="boutique-poster.png" target="_blank" rel="noopener">View full design ↗</a></div>
-</article>
-</div></div></section>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#enquiry">Enquiry</a></li>
+      </ul>
 
-<section id="process"><div class="wrap">
-<div class="section-head"><div class="kicker">Simple process</div><h2>From idea to launch.</h2></div>
-<div class="process">
-<div class="step"><div class="num">01</div><h3>Discover</h3><p>Understand your business, audience and goal.</p></div>
-<div class="step"><div class="num">02</div><h3>Create</h3><p>Develop the strategy, visuals and content.</p></div>
-<div class="step"><div class="num">03</div><h3>Refine</h3><p>Review, improve and make everything brand-consistent.</p></div>
-<div class="step"><div class="num">04</div><h3>Launch</h3><p>Deliver the final assets and help put them to work.</p></div>
-</div></div></section>
+    </div>
+  </nav>
 
-<section id="contact"><div class="wrap"><div class="cta">
-<div class="kicker">Let's work together</div><h2>Ready to grow smarter?</h2>
-<p class="sub" style="margin:12px 0 24px">Tell us what you're building and what you need. We'll take it from there.</p>
-<div class="actions" style="justify-content:flex-start">
-<a class="btn primary" href="https://www.instagram.com/nexorastudio.labs/" target="_blank" rel="noopener">DM on Instagram</a>
-<a class="btn" href="mailto:nexorastudio.marketing@gmail.com">Email Nexora</a>
-</div>
-<p style="margin-top:18px;color:#6f7a8c;font-size:12px">Email: nexorastudio.marketing@gmail.com</p>
-</div></div></section>
-</main>
 
-<footer><div class="wrap footerin"><div>© 2026 Nexora Studio. All rights reserved.</div><div>AI Marketing • Creative • Digital Solutions</div></div></footer>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+
+      <div class="badge">
+        AI-Powered Marketing & Creative Studio
+      </div>
+
+      <h1>
+        Make your brand
+        <span class="gradient-text">impossible to ignore.</span>
+      </h1>
+
+      <p>
+        Nexora Studio helps businesses grow with AI marketing,
+        creative design, social media content, branding and digital solutions.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/919976150729?text=Hi%20Nexora%20Studio%2C%20I%20want%20to%20know%20more%20about%20your%20services."
+          target="_blank">
+          Start a Project
+        </a>
+
+        <a class="btn btn-secondary" href="#work">
+          View Our Work
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Everything your brand needs to grow online.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3>AI Marketing</h3>
+          <p>
+            AI-powered strategies, content ideas and marketing solutions
+            designed to help your business grow faster.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Poster & Creative Design</h3>
+          <p>
+            Scroll-stopping promotional posters and creative designs
+            for your brand and campaigns.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Content</h3>
+          <p>
+            Social media posts, captions, content ideas and campaigns
+            created to improve engagement.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Branding</h3>
+          <p>
+            Build a memorable brand identity with logos, visual direction
+            and creative brand assets.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Digital Marketing</h3>
+          <p>
+            Practical digital marketing strategies to attract customers
+            and increase your online presence.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Digital Solutions</h3>
+          <p>
+            Websites, landing pages and simple digital solutions
+            designed for modern businesses.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing-section">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Simple Pricing</h2>
+        <p>Choose a plan that fits your business.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- LAUNCH -->
+        <div class="pricing-card">
+
+          <h3>Launch</h3>
+
+          <div class="price">
+            ₹999 <span>/ month</span>
+          </div>
+
+          <ul class="features">
+            <li>8 Social Media Posts</li>
+            <li>4 Promotional Creatives</li>
+            <li>AI Caption Ideas</li>
+            <li>Basic Hashtag Strategy</li>
+            <li>WhatsApp Support</li>
+          </ul>
+
+          <a
+            class="btn btn-secondary"
+            href="https://wa.me/919976150729?text=Hi%20Nexora%20Studio%2C%20I%27m%20interested%20in%20the%20Launch%20Plan%20%E2%80%93%20%E2%82%B9999%2Fmonth."
+            target="_blank">
+            Choose Launch
+          </a>
+
+        </div>
+
+
+        <!-- SCALE -->
+        <div class="pricing-card popular">
+
+          <div class="popular-badge">
+            MOST POPULAR
+          </div>
+
+          <h3>Scale</h3>
+
+          <div class="price">
+            ₹2,499 <span>/ month</span>
+          </div>
+
+          <ul class="features">
+            <li>16 Social Media Posts</li>
+            <li>8 Promotional Creatives</li>
+            <li>Reels Content Ideas</li>
+            <li>AI Marketing Strategy</li>
+            <li>Hashtag & Caption Strategy</li>
+            <li>Monthly Content Plan</li>
+            <li>Priority Support</li>
+          </ul>
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/919976150729?text=Hi%20Nexora%20Studio%2C%20I%27m%20interested%20in%20the%20Scale%20Plan%20%E2%80%93%20%E2%82%B92499%2Fmonth."
+            target="_blank">
+            Choose Scale
+          </a>
+
+        </div>
+
+
+        <!-- DOMINATE -->
+        <div class="pricing-card">
+
+          <h3>Dominate</h3>
+
+          <div class="price">
+            ₹4,999 <span>/ month</span>
+          </div>
+
+          <ul class="features">
+            <li>30 Social Media Posts</li>
+            <li>12 Premium Creatives</li>
+            <li>Reels & Video Concepts</li>
+            <li>Complete Brand Strategy</li>
+            <li>AI Marketing Campaigns</li>
+            <li>Monthly Growth Strategy</li>
+            <li>Priority Creative Support</li>
+          </ul>
+
+          <a
+            class="btn btn-secondary"
+            href="https://wa.me/919976150729?text=Hi%20Nexora%20Studio%2C%20I%27m%20interested%20in%20the%20Dominate%20Plan%20%E2%80%93%20%E2%82%B94999%2Fmonth."
+            target="_blank">
+            Choose Dominate
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORK -->
+  <section id="work">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Work</h2>
+        <p>Some of our creative samples.</p>
+      </div>
+
+      <div class="work-grid">
+
+        <div class="work-card">
+          <img src="jewellery-poster.png" alt="Jewellery Marketing Poster">
+          <div class="work-info">
+            <h3>Jewellery Campaign</h3>
+            <p>Festival promotional creative</p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <img src="food-poster.png" alt="Food Marketing Poster">
+          <div class="work-info">
+            <h3>Food Campaign</h3>
+            <p>Food brand promotional creative</p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <img src="boutique-poster.png" alt="Boutique Marketing Poster">
+          <div class="work-info">
+            <h3>Boutique Campaign</h3>
+            <p>Fashion promotional creative</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section id="process">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Process</h2>
+        <p>Simple, creative and focused on results.</p>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="process-card">
+          <div class="process-number">01</div>
+          <h3>Discover</h3>
+          <p>
+            Understand your business, audience and goals.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">02</div>
+          <h3>Create</h3>
+          <p>
+            Develop creative ideas and marketing content.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">03</div>
+          <h3>Refine</h3>
+          <p>
+            Improve the content based on your requirements.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">04</div>
+          <h3>Launch</h3>
+          <p>
+            Deliver and launch your campaign to the audience.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ENQUIRY FORM -->
+  <section id="enquiry" class="enquiry-section">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Start Your Project</h2>
+        <p>
+          Tell us about your business and we'll connect with you on WhatsApp.
+        </p>
+      </div>
+
+      <div class="form-wrapper">
+
+        <form id="enquiryForm">
+
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="business">Business Name *</label>
+            <input
+              type="text"
+              id="business"
+              placeholder="Enter your business name"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Enter your phone number"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Required *</label>
+
+            <select id="service" required>
+              <option value="">Select a service</option>
+              <option value="AI Marketing">AI Marketing</option>
+              <option value="Poster & Creative Design">
+                Poster & Creative Design
+              </option>
+              <option value="Social Media Content">
+                Social Media Content
+              </option>
+              <option value="Branding">Branding</option>
+              <option value="Digital Marketing">
+                Digital Marketing
+              </option>
+              <option value="Digital Solutions">
+                Digital Solutions
+              </option>
+              <option value="Monthly Marketing Package">
+                Monthly Marketing Package
+              </option>
+            </select>
+
+          </div>
+
+          <div class="form-group">
+            <label for="details">Project Details</label>
+
+            <textarea
+              id="details"
+              placeholder="Tell us what you need..."></textarea>
+
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary submit-btn">
+            Send Enquiry on WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Let's Build Something Great.</h2>
+
+        <p>
+          Have a project in mind? Let's talk and turn your idea into reality.
+        </p>
+
+        <div class="contact-links">
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/919976150729?text=Hi%20Nexora%20Studio%2C%20I%20want%20to%20discuss%20a%20project."
+            target="_blank">
+            WhatsApp Us
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://www.instagram.com/nexorastudio.labs/"
+            target="_blank">
+            Instagram
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="mailto:nexorastudio.marketing@gmail.com">
+            Email Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2026 Nexora Studio. All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- WHATSAPP FORM SCRIPT -->
+  <script>
+
+    const whatsappNumber = "919976150729";
+
+    document
+      .getElementById("enquiryForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name =
+          document.getElementById("name").value.trim();
+
+        const business =
+          document.getElementById("business").value.trim();
+
+        const phone =
+          document.getElementById("phone").value.trim();
+
+        const service =
+          document.getElementById("service").value;
+
+        const details =
+          document.getElementById("details").value.trim();
+
+        const message =
+`Hi Nexora Studio! 👋
+
+I would like to enquire about your services.
+
+Name: ${name}
+Business Name: ${business}
+Phone: ${phone}
+Service Required: ${service}
+
+Project Details:
+${details || "Not provided"}
+
+Please contact me regarding this enquiry. Thank you!`;
+
+        const whatsappURL =
+          "https://wa.me/" +
+          whatsappNumber +
+          "?text=" +
+          encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+
+      });
+
+  </script>
+
 </body>
 </html>
