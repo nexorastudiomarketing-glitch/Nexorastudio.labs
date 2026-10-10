@@ -1,1024 +1,509 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#09090f">
-
-  <title>Nexora Studios | Creative Poster Design</title>
-  <meta name="description" content="Nexora Studios creates professional social media posts, promotional posters, brand creatives and campaign designs for businesses.">
-
-  <style>
-    :root {
-      --bg: #09090f;
-      --surface: #12121d;
-      --surface-light: #191927;
-      --purple: #9b5cff;
-      --purple-light: #c29bff;
-      --text: #f7f4ff;
-      --muted: #aaa5bc;
-      --border: rgba(255,255,255,0.1);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 85px;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input, select, textarea {
-      font: inherit;
-    }
-
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    .section {
-      padding: 85px 0;
-    }
-
-    .section-label {
-      color: var(--purple-light);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: clamp(30px, 5vw, 45px);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #c29bff, #8a48ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 22px;
-      border-radius: 9px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.25s;
-    }
-
-    .btn-primary {
-      background: var(--purple);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #8540ed;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border-color: var(--border);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--purple);
-      color: var(--purple-light);
-    }
-
-    /* Navigation */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9,9,15,0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: var(--purple-light);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      list-style: none;
-      font-size: 14px;
-      color: #ddd8e9;
-    }
-
-    .nav-links a:hover {
-      color: var(--purple-light);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: transparent;
-      color: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 7px 11px;
-      cursor: pointer;
-      font-size: 21px;
-    }
-
-    /* Hero */
-
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 75% 35%, rgba(130,60,255,0.18), transparent 42%),
-        radial-gradient(ellipse at 10% 85%, rgba(80,40,160,0.1), transparent 40%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 45px;
-      align-items: center;
-      padding: 75px 0;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      border: 1px solid rgba(155,92,255,0.4);
-      color: var(--purple-light);
-      background: rgba(155,92,255,0.08);
-      padding: 7px 13px;
-      border-radius: 30px;
-      font-size: 12px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(39px, 6vw, 68px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 540px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .hero-note {
-      margin-top: 22px;
-      color: #c0b9d0;
-      font-size: 12px;
-    }
-
-    .hero-art {
-      position: relative;
-      min-height: 380px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .art-glow {
-      position: absolute;
-      width: 270px;
-      height: 270px;
-      background: var(--purple);
-      filter: blur(110px);
-      opacity: 0.24;
-    }
-
-    .design-card {
-      width: min(100%, 330px);
-      min-height: 370px;
-      position: relative;
-      border: 1px solid rgba(255,255,255,0.17);
-      border-radius: 20px;
-      overflow: hidden;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background:
-        linear-gradient(145deg, rgba(155,92,255,0.75), rgba(29,18,53,0.95) 48%, #101018);
-      box-shadow: 0 25px 90px rgba(0,0,0,0.4);
-      transform: rotate(3deg);
-    }
-
-    .design-card::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(255,255,255,0.23);
-      border-radius: 50%;
-      right: -85px;
-      top: 60px;
-      box-shadow: 0 0 0 22px rgba(255,255,255,0.03),
-                  0 0 0 48px rgba(255,255,255,0.03);
-    }
-
-    .design-card small,
-    .design-card h2,
-    .design-card p,
-    .design-card div {
-      position: relative;
-      z-index: 1;
-    }
-
-    .design-card small {
-      letter-spacing: 3px;
-      font-size: 11px;
-    }
-
-    .design-card h2 {
-      font-size: 47px;
-      line-height: 0.98;
-      letter-spacing: -2px;
-    }
-
-    .design-card p {
-      font-size: 13px;
-      color: #e1d5ff;
-    }
-
-    .design-card .card-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-
-    .floating-tag {
-      position: absolute;
-      background: #1c1928;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 16px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.3);
-      font-size: 13px;
-    }
-
-    .tag-one {
-      top: 38px;
-      left: 0;
-    }
-
-    .tag-two {
-      bottom: 35px;
-      right: -5px;
-    }
-
-    /* Services */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      transition: 0.25s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(155,92,255,0.6);
-    }
-
-    .service-icon {
-      width: 50px;
-      height: 50px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: rgba(155,92,255,0.14);
-      color: var(--purple-light);
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 9px;
-      font-size: 19px;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* Portfolio */
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .portfolio-item {
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      overflow: hidden;
-      background: var(--surface);
-    }
-
-    .portfolio-image {
-      aspect-ratio: 4 / 5;
-      background: var(--surface-light);
-      overflow: hidden;
-      display: grid;
-      place-items: center;
-    }
-
-    .portfolio-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s;
-    }
-
-    .portfolio-item:hover img {
-      transform: scale(1.04);
-    }
-
-    .image-placeholder {
-      padding: 25px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .portfolio-info {
-      padding: 18px;
-    }
-
-    .portfolio-info h3 {
-      font-size: 17px;
-      margin-bottom: 4px;
-    }
-
-    .portfolio-info p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Pricing */
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .price-card {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .price-card.featured {
-      border: 1px solid var(--purple);
-      background: linear-gradient(180deg, rgba(155,92,255,0.12), var(--surface) 38%);
-      box-shadow: 0 0 35px rgba(155,92,255,0.08);
-    }
-
-    .popular {
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--purple);
-      padding: 5px 14px;
-      border-radius: 30px;
-      font-size: 11px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .price-card h3 {
-      font-size: 22px;
-      margin-bottom: 7px;
-    }
-
-    .price-description {
-      color: var(--muted);
-      font-size: 13px;
-      min-height: 42px;
-    }
-
-    .price {
-      font-size: 38px;
-      font-weight: 900;
-      margin: 22px 0 2px;
-      letter-spacing: -1px;
-    }
-
-    .price span {
-      font-size: 13px;
-      font-weight: normal;
-      color: var(--muted);
-      letter-spacing: 0;
-    }
-
-    .billing-note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .feature-list {
-      list-style: none;
-      margin: 5px 0 25px;
-      flex: 1;
-    }
-
-    .feature-list li {
-      color: #ded9e9;
-      font-size: 13px;
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .feature-list li::before {
-      content: "✓";
-      color: var(--purple-light);
-      margin-right: 9px;
-      font-weight: bold;
-    }
-
-    .price-card .btn {
-      width: 100%;
-    }
-
-    .individual-prices {
-      margin-top: 35px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 25px;
-    }
-
-    .individual-prices h3 {
-      margin-bottom: 17px;
-      font-size: 19px;
-    }
-
-    .rate-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0 30px;
-    }
-
-    .rate-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
-    }
-
-    .rate-row span:first-child {
-      color: #ded9e9;
-    }
-
-    .rate-row strong {
-      white-space: nowrap;
-      color: var(--purple-light);
-    }
-
-    .terms {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 22px;
-      line-height: 1.9;
-    }
-
-    /* Process */
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .process-step {
-      padding: 24px 20px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 14px;
-    }
-
-    .step-number {
-      color: var(--purple-light);
-      font-size: 29px;
-      font-weight: 900;
-      margin-bottom: 13px;
-    }
-
-    .process-step h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .process-step p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* About */
-
-    .about-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-      background: linear-gradient(135deg, rgba(155,92,255,0.11), rgba(255,255,255,0.015));
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px;
-    }
-
-    .about-box p {
-      color: var(--muted);
-      margin-top: 15px;
-    }
-
-    .about-points {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .about-point {
-      padding: 17px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      font-size: 13px;
-    }
-
-    .about-point strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
-
-    .about-point span {
-      color: var(--muted);
-    }
-
-    /* Enquiry */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .contact-info h3 {
-      font-size: 25px;
-      margin-bottom: 14px;
-    }
-
-    .contact-info p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .contact-detail {
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border);
-      color: #e8e1f5;
-      font-size: 14px;
-    }
-
-    .contact-detail span {
-      color: var(--purple-light);
-      margin-right: 10px;
-    }
-
-    .contact-form {
-      padding: 28px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .form-group {
-      margin-bottom: 17px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 7px;
-      color: #e6e0f2;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: #0b0b12;
-      color: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 13px;
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--purple);
-    }
-
-    .form-group select option {
-      background: #12121d;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 110px;
-    }
-
-    .contact-form .btn {
-      width: 100%;
-    }
-
-    .form-note {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 12px;
-      text-align: center;
-    }
-
-    /* Footer */
-
-    footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a:hover {
-      color: var(--purple-light);
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 90;
-      background: #25d366;
-      color: #062b13;
-      border-radius: 40px;
-      padding: 13px 17px;
-      font-size: 14px;
-      font-weight: bold;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-    }
-
-    .whatsapp-float:hover {
-      transform: translateY(-3px);
-    }
-
-    /* Responsive */
-
-    @media (max-width: 900px) {
-      .nav-links {
-        gap: 14px;
-        font-size: 13px;
-      }
-
-      .hero-grid {
-        gap: 20px;
-      }
-
-      .services-grid,
-      .portfolio-grid,
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .price-card:last-child {
-        grid-column: 1 / -1;
-      }
-
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-box {
-        padding: 28px;
-        gap: 25px;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .section {
-        padding: 65px 0;
-      }
-
-      nav {
-        min-height: 68px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        padding: 20px 5%;
-        background: #101019;
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li a {
-        display: block;
-        padding: 11px 0;
-        font-size: 15px;
-      }
-
-      .nav-links .nav-cta {
-        margin-top: 8px;
-        text-align: center;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        padding: 65px 0 45px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1.5px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .hero-art {
-        min-height: 350px;
-        margin: 10px 5px;
-      }
-
-      .design-card {
-        min-height: 325px;
-        max-width: 290px;
-      }
-
-      .design-card h2 {
-        font-size: 42px;
-      }
-
-      .tag-one {
-        top: 25px;
-        left: 0;
-      }
-
-      .tag-two {
-        bottom: 20px;
-        right: 0;
-      }
-
-      .services-grid,
-      .portfolio-grid,
-      .pricing-grid,
-      .process-grid,
-      .about-box,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .price-card:last-child {
-        grid-column: auto;
-      }
-
-      .service-card {
-        padding: 23px;
-      }
-
-      .about-box {
-        padding: 24px;
-      }
-
-      .about-points {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .rate-grid,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-form {
-        padding: 21px;
-      }
-
-      .whatsapp-float {
-        right: 12px;
-        bottom: 12px;
-        padding: 11px 14px;
-        font-size: 12px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition: none !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Studios | Creative Design</title>
+<meta name="description" content="Professional social media posts, promotional posters and brand creatives by Nexora Studios.">
+
+<style>
+:root {
+  --bg:#09090f;
+  --card:#151522;
+  --purple:#9b5cff;
+  --text:#f7f4ff;
+  --muted:#aaa5bb;
+  --border:rgba(255,255,255,.13);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:85px; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial, sans-serif;
+  line-height:1.6;
+}
+a { color:inherit; text-decoration:none; }
+.container { width:min(1120px,92%); margin:auto; }
+header {
+  position:sticky; top:0; z-index:100;
+  background:rgba(9,9,15,.96);
+  border-bottom:1px solid var(--border);
+}
+nav {
+  min-height:72px; display:flex;
+  align-items:center; justify-content:space-between;
+  gap:20px;
+}
+.logo { font-weight:900; font-size:20px; }
+.logo span { color:#c29bff; }
+.nav-links {
+  display:flex; align-items:center; gap:22px;
+  list-style:none; padding:0; margin:0;
+}
+.nav-links a:hover { color:#c29bff; }
+.menu-toggle {
+  display:none; padding:9px 13px;
+  color:white; background:transparent;
+  border:1px solid var(--border);
+  border-radius:9px; cursor:pointer;
+}
+.btn {
+  display:inline-block; padding:12px 18px;
+  border-radius:10px; font-weight:bold;
+  border:1px solid var(--border); cursor:pointer;
+  text-align:center;
+}
+.btn-primary {
+  background:linear-gradient(135deg,#9b5cff,#7439db);
+  border:0; color:white;
+}
+.btn-outline { background:transparent; color:white; }
+section { padding:75px 0; }
+.hero { padding:80px 0; }
+.hero-grid {
+  display:grid; grid-template-columns:1.1fr .9fr;
+  align-items:center; gap:40px;
+}
+h1 { font-size:clamp(38px,6vw,68px); line-height:1.08; }
+h2 { font-size:clamp(28px,4vw,42px); line-height:1.2; }
+p { color:var(--muted); }
+.purple { color:#c29bff; }
+.badge {
+  display:inline-block; padding:6px 12px;
+  border:1px solid #6d469f; border-radius:25px;
+  color:#c29bff; font-size:13px;
+}
+.hero-art {
+  min-height:350px; padding:30px;
+  display:grid; place-items:center;
+  border:1px solid var(--border); border-radius:25px;
+  background:radial-gradient(circle at top left,#542b83,#151522 65%);
+}
+.poster {
+  width:230px; min-height:290px; padding:25px;
+  display:flex; flex-direction:column;
+  justify-content:space-between;
+  border-radius:14px;
+  transform:rotate(4deg);
+  background:linear-gradient(145deg,#251343,#8f4bdb,#f4a8d7);
+  box-shadow:0 20px 55px #0008;
+  font-size:28px; font-weight:900; line-height:1.05;
+}
+.poster small { font-size:12px; font-weight:normal; }
+.heading { text-align:center; max-width:720px; margin:0 auto 35px; }
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.card {
+  padding:24px; border:1px solid var(--border);
+  border-radius:16px; background:var(--card);
+}
+.card h3 { margin-top:0; }
+.card p { margin-bottom:0; }
+.icon { font-size:30px; margin-bottom:10px; }
+.portfolio-art {
+  min-height:210px; padding:22px; margin-bottom:18px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  border-radius:12px; font-size:28px; font-weight:900;
+  line-height:1.1;
+}
+.food { background:linear-gradient(145deg,#6e160d,#e64a20,#32110b); }
+.jewellery { background:linear-gradient(145deg,#24170e,#93642d,#15100b); }
+.boutique { background:linear-gradient(145deg,#411b39,#c14f88,#27152c); }
+.price { font-size:34px; font-weight:900; }
+.price small { font-size:14px; color:var(--muted); font-weight:normal; }
+.card ul { padding-left:20px; color:var(--muted); }
+.card li { margin:9px 0; }
+.featured { border-color:#9b5cff; }
+.rates {
+  margin-top:24px; padding:24px;
+  border:1px solid var(--border);
+  border-radius:16px; background:var(--card);
+}
+.rate-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+}
+.rate { padding:12px; background:#ffffff08; border-radius:10px; }
+.rate span { display:block; color:var(--muted); font-size:14px; }
+.process { display:grid; grid-template-columns:repeat(4,1fr); gap:15px; }
+.contact-grid {
+  display:grid; grid-template-columns:.8fr 1.2fr; gap:24px;
+}
+.field { display:grid; gap:7px; margin-bottom:14px; }
+.field label { color:var(--muted); font-size:14px; }
+.field input,.field select,.field textarea {
+  width:100%; padding:12px; border-radius:9px;
+  border:1px solid var(--border);
+  background:#0d0d16; color:white; font:inherit;
+}
+.field textarea { min-height:120px; resize:vertical; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.enquiry-actions { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.form-message { font-size:14px; }
+footer { padding:28px 0; border-top:1px solid var(--border); }
+.footer-content {
+  display:flex; justify-content:space-between;
+  gap:15px; flex-wrap:wrap;
+}
+.whatsapp-float {
+  position:fixed; right:16px; bottom:16px; z-index:90;
+  background:#25d366; color:#062b16;
+  padding:12px 16px; border-radius:30px; font-weight:bold;
+}
+@media(max-width:850px) {
+  .menu-toggle { display:block; }
+  .nav-links {
+    display:none; position:absolute; top:72px; left:0; right:0;
+    padding:22px; background:#10101a;
+    flex-direction:column; align-items:stretch;
+    border-bottom:1px solid var(--border);
+  }
+  .nav-links.active { display:flex; }
+  .hero-grid,.contact-grid { grid-template-columns:1fr; }
+  .grid { grid-template-columns:repeat(2,1fr); }
+  .process { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:560px) {
+  section { padding:55px 0; }
+  .grid,.process,.rate-grid,.form-row,.enquiry-actions {
+    grid-template-columns:1fr;
+  }
+  .hero { padding:55px 0; }
+  .hero-art { min-height:320px; }
+}
+</style>
 </head>
 
 <body>
+<header>
+<nav class="container">
+  <a class="logo" href="#home">NEXORA<span> STUDIOS.</span></a>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false">☰ Menu</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a class="btn btn-primary" href="#contact">Get Started</a></li>
+  </ul>
+</nav>
+</header>
 
-  <!-- NAVIGATION -->
-  <header>
-    <nav class="container">
-      <a class="logo" href="#home">NEXORA<span> STUDIOS.</span></a>
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+  <div>
+    <span class="badge">✦ CREATIVE DESIGN STUDIO</span>
+    <h1>Designs That Make Your Brand <span class="purple">Stand Out.</span></h1>
+    <p>We create eye-catching social media posts, promotional posters and brand creatives that help your business look professional and memorable.</p>
+    <p>
+      <a class="btn btn-primary" href="#pricing">Explore Packages ↗</a>
+      <a class="btn btn-outline" href="#portfolio">View Our Work</a>
+    </p>
+    <p>✦ Creative designs · Consistent branding · Clear pricing</p>
+  </div>
+  <div class="hero-art">
+    <div class="poster">
+      NEXORA<br>STUDIOS.<br><br>DESIGN<br>YOUR<br>FUTURE.
+      <small>Social posts · Posters · Campaigns</small>
+    </div>
+  </div>
+</div>
+</section>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-      >☰</button>
+<section id="services">
+<div class="container">
+<div class="heading">
+  <span class="badge">WHAT WE DO</span>
+  <h2>Design Services for Growing Brands</h2>
+  <p>Professional visual design to help your business look consistent.</p>
+</div>
+<div class="grid">
+  <article class="card"><div class="icon">✦</div><h3>Social Media Posts</h3><p>Creative designs for Instagram, Facebook and other platforms.</p></article>
+  <article class="card"><div class="icon">▧</div><h3>Promotional Posters</h3><p>Promotional creatives for offers, launches and announcements.</p></article>
+  <article class="card"><div class="icon">◈</div><h3>Brand Creatives</h3><p>Consistent colours, typography and visual direction.</p></article>
+  <article class="card"><div class="icon">▤</div><h3>Instagram Stories</h3><p>Vertical designs for offers, launches and updates.</p></article>
+  <article class="card"><div class="icon">▦</div><h3>Carousel Designs</h3><p>Multi-slide designs to communicate information clearly.</p></article>
+  <article class="card"><div class="icon">✧</div><h3>Flyers & Menus</h3><p>Digital and print-ready flyers, menus and layouts.</p></article>
+</div>
+</div>
+</section>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#about">About</a></li>
-        <li>
-          <a class="btn btn-primary nav-cta" href="#contact">Get Started</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<section id="portfolio">
+<div class="container">
+<div class="heading">
+  <span class="badge">SELECTED CONCEPTS</span>
+  <h2>Creative Work That Speaks</h2>
+  <p>Sample concepts across different business categories.</p>
+</div>
+<div class="grid">
+  <article class="card"><div class="portfolio-art jewellery">TIMELESS<br>GLOW.</div><h3>Jewellery Campaign</h3><p>Premium, elegant promotional designs.</p></article>
+  <article class="card"><div class="portfolio-art food">FRESH.<br>HOT.<br>DELICIOUS.</div><h3>Food Promotion</h3><p>Bold visuals for offers and food launches.</p></article>
+  <article class="card"><div class="portfolio-art boutique">YOUR<br>STYLE.<br>YOUR STORY.</div><h3>Boutique Collection</h3><p>Fashion-led creative design.</p></article>
+</div>
+</div>
+</section>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero-grid">
+<section id="pricing">
+<div class="container">
+<div class="heading">
+  <span class="badge">SIMPLE PRICING</span>
+  <h2>Choose a Design Plan</h2>
+  <p>Transparent packages for businesses that need consistent creative assets.</p>
+</div>
+<div class="grid">
+  <article class="card">
+    <h3>Launch</h3><p>For getting started</p>
+    <div class="price">₹1,499 <small>/ month</small></div>
+    <ul>
+      <li>4 social media post designs</li>
+      <li>2 promotional creatives</li>
+      <li>Consistent brand colours</li>
+      <li>1 revision round per design</li>
+      <li>Final PNG/JPG files</li>
+      <li>2–3 working days standard delivery</li>
+    </ul>
+    <a class="btn btn-outline package-link" data-package="Launch — ₹1,499/month" href="#contact">Choose Launch</a>
+  </article>
+  <article class="card featured">
+    <h3>Scale — Popular Choice</h3><p>For consistent posting</p>
+    <div class="price">₹2,999 <small>/ month</small></div>
+    <ul>
+      <li>8 social media post designs</li>
+      <li>4 promotional creatives</li>
+      <li>2 Instagram Story designs</li>
+      <li>2 revision rounds per design</li>
+      <li>Final PNG/JPG files</li>
+      <li>2–3 working days standard delivery</li>
+    </ul>
+    <a class="btn btn-primary package-link" data-package="Scale — ₹2,999/month" href="#contact">Choose Scale</a>
+  </article>
+  <article class="card">
+    <h3>Dominate</h3><p>For active campaigns</p>
+    <div class="price">₹5,499 <small>/ month</small></div>
+    <ul>
+      <li>16 social media post designs</li>
+      <li>6 promotional creatives</li>
+      <li>4 Instagram Story designs</li>
+      <li>1 carousel up to 5 slides</li>
+      <li>2 revision rounds per design</li>
+      <li>Priority design queue</li>
+    </ul>
+    <a class="btn btn-outline package-link" data-package="Dominate — ₹5,499/month" href="#contact">Choose Dominate</a>
+  </article>
+</div>
 
-        <div>
-          <div class="hero-badge">✦ CREATIVE DESIGN STUDIO</div>
+<div class="rates">
+<h3>Individual Design Rates</h3>
+<div class="rate-grid">
+  <div class="rate"><span>Basic social post</span><strong>₹399</strong></div>
+  <div class="rate"><span>Promo poster</span><strong>₹599</strong></div>
+  <div class="rate"><span>Premium campaign poster</span><strong>₹999</strong></div>
+  <div class="rate"><span>Instagram Story</span><strong>₹299</strong></div>
+  <div class="rate"><span>Reel cover</span><strong>₹349</strong></div>
+  <div class="rate"><span>Carousel up to 5 slides</span><strong>₹999</strong></div>
+  <div class="rate"><span>Festival creative</span><strong>₹499</strong></div>
+  <div class="rate"><span>Resize existing design</span><strong>₹199</strong></div>
+  <div class="rate"><span>Flyer / Menu</span><strong>₹799</strong></div>
+</div>
+</div>
+</div>
+</section>
 
-          <h1>
-            Designs That Make Your Brand
-            <span class="gradient-text">Stand Out.</span>
-          </h1>
+<section id="about">
+<div class="container">
+<div class="heading">
+  <span class="badge">HOW WE WORK</span>
+  <h2>Simple Process. Clear Communication.</h2>
+  <p>From your brief to the final design files, we keep the process straightforward.</p>
+</div>
+<div class="process">
+  <article class="card"><h3>01. Share your brief</h3><p>Tell us about your business and design requirements.</p></article>
+  <article class="card"><h3>02. Confirm the plan</h3><p>Choose a package or individual design.</p></article>
+  <article class="card"><h3>03. Design & review</h3><p>We create the design and apply included revisions.</p></article>
+  <article class="card"><h3>04. Receive your files</h3><p>Approved designs are delivered as PNG/JPG files.</p></article>
+</div>
+</div>
+</section>
 
-          <p>
-            We create eye-catching social media posts, promotional posters
-            and brand creatives that help your business look professional
-            and memorable.
-          </p>
+<section id="contact">
+<div class="container">
+<div class="heading">
+  <span class="badge">LET'S TALK DESIGN</span>
+  <h2>Tell Us What You Need</h2>
+  <p>Fill in your details and choose WhatsApp or Email to send your enquiry.</p>
+</div>
+<div class="contact-grid">
+  <div class="card">
+    <h3>Let's Create Something Great.</h3>
+    <p>Social media designs, promotional posters, brand creatives and monthly design plans.</p>
+    <p><a class="btn btn-primary" href="https://wa.me/919976150729" target="_blank" rel="noopener">Chat on WhatsApp ↗</a></p>
+    <p>Email: <a href="mailto:nexorastudio.marketing@gmail.com">nexorastudio.marketing@gmail.com</a></p>
+  </div>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#pricing">Explore Packages ↗</a>
-            <a class="btn btn-outline" href="#portfolio">View Our Work</a>
-          </div>
+  <form class="card" id="enquiryForm">
+    <div class="form-row">
+      <div class="field">
+        <label for="name">Your name *</label>
+        <input id="name" name="name" required placeholder="Your name">
+      </div>
+      <div class="field">
+        <label for="business">Business name</label>
+        <input id="business" name="business" placeholder="Your business">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="phone">Your phone *</label>
+        <input id="phone" name="phone" required inputmode="tel" placeholder="Your phone number">
+      </div>
+      <div class="field">
+        <label for="service">Service *</label>
+        <select id="service" name="service" required>
+          <option value="">Choose a service</option>
+          <option>Social media post</option>
+          <option>Promotional poster</option>
+          <option>Instagram Story</option>
+          <option>Carousel design</option>
+          <option>Flyer / Menu</option>
+          <option>Monthly package</option>
+          <option>Other design</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="details">Project details *</label>
+      <textarea id="details" name="details" required placeholder="What do you want designed? Include size, content and deadline."></textarea>
+    </div>
+    <p class="form-message" id="formMessage">Choose how you'd like to send your enquiry.</p>
+    <div class="enquiry-actions">
+      <button class="btn btn-primary" type="button" id="sendWhatsApp">Send via WhatsApp ↗</button>
+      <button class="btn btn-outline" type="button" id="sendEmail">Send via Email ↗</button>
+    </div>
+    <p><small>Payment is upfront. Unused monthly designs do not roll over. Posting, captions, account management, video editing, ad spend, photography and source files are excluded unless agreed separately. Extra work is charged separately. Taxes apply where required.</small></p>
+  </form>
+</div>
+</div>
+</section>
+</main>
 
-          <div class="hero-note">
-            ✦ Creative designs · Consistent branding · Clear pricing
-          </div>
-        </div>
+<footer>
+<div class="container footer-content">
+  <a class="logo" href="#home">NEXORA<span> STUDIOS.</span></a>
+  <span>© <span id="year"></span> Nexora Studios. All rights reserved.</span>
+  <span><a href="#services">Services</a> · <a href="#pricing">Pricing</a> · <a href="#contact">Contact</a></span>
+</div>
+</footer>
 
-        <div class="hero-art" aria-label="Creative poster
+<a class="whatsapp-float" href="https://wa.me/919976150729" target="_blank" rel="noopener">☏ WhatsApp</a>
+
+<script>
+(function() {
+  "use strict";
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", function(event) {
+    event.stopPropagation();
+    const open = navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(open));
+  });
+
+  navLinks.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener("click", function() {
+      navLinks.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("click", function(event) {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  window.addEventListener("resize", function() {
+    if (window.innerWidth > 850) {
+      navLinks.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.querySelectorAll(".package-link").forEach(function(link) {
+    link.addEventListener("click", function() {
+      document.getElementById("details").value =
+        "I'm interested in the " + link.dataset.package +
+        " design package. Please share the next steps.";
+      document.getElementById("service").value = "Monthly package";
+    });
+  });
+
+  const form = document.getElementById("enquiryForm");
+  const message = document.getElementById("formMessage");
+
+  function getDetails() {
+    if (!form.reportValidity()) {
+      message.textContent = "Please complete all required fields.";
+      return null;
+    }
+
+    return {
+      name: document.getElementById("name").value.trim(),
+      business: document.getElementById("business").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      service: document.getElementById("service").value,
+      details: document.getElementById("details").value.trim()
+    };
+  }
+
+  function makeMessage(d) {
+    return [
+      "Hello Nexora Studios! I'd like to enquire about your design services.",
+      "",
+      "Name: " + d.name,
+      "Business: " + (d.business || "Not provided"),
+      "Phone: " + d.phone,
+      "Service: " + d.service,
+      "Project details: " + d.details
+    ].join("\n");
+  }
+
+  document.getElementById("sendWhatsApp").addEventListener("click", function() {
+    const d = getDetails();
+    if (!d) return;
+
+    const url = "https://wa.me/919976150729?text=" +
+      encodeURIComponent(makeMessage(d));
+
+    window.open(url, "_blank");
+    message.textContent =
+      "WhatsApp opened. Review the message and press Send.";
+  });
+
+  document.getElementById("sendEmail").addEventListener("click", function() {
+    const d = getDetails();
+    if (!d) return;
+
+    const subject = encodeURIComponent("Nexora Studios Enquiry — " + d.service);
+    const body = encodeURIComponent(makeMessage(d));
+
+    window.location.href =
+      "mailto:nexorastudio.marketing@gmail.com?subject=" +
+      subject + "&body=" + body;
+
+    message.textContent =
+      "Your email app should open. Review the message and press Send.";
+  });
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+  });
+})();
+</script>
+</body>
+        </html>
