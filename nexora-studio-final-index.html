@@ -375,3 +375,51 @@ const backTop=document.getElementById("backTop");window.addEventListener("scroll
 </script>
 <script>const yearEl=document.getElementById("copyrightYear");if(yearEl)yearEl.textContent=new Date().getFullYear();</script></body>
 </html>
+
+
+/* FINAL DARK THEME FIX — intentionally last so earlier light-theme rules cannot override it */
+:root{color-scheme:dark!important;--bg:#08080c!important;--soft:#101018!important;--panel:#14141f!important;--white:#f7f7fb!important;--muted:#a09fb2!important;--line:rgba(255,255,255,.12)!important;--purple:#7c5cff!important;--cyan:#20d9ff!important}
+html,body{background-color:#08080c!important;color:#f7f7fb!important}
+body{background:radial-gradient(ellipse at 50% -15%,rgba(124,92,255,.19),transparent 55%),#08080c!important;color:#f7f7fb!important}
+body:before{background-image:radial-gradient(rgba(255,255,255,.16) .6px,transparent .6px)!important;opacity:.12!important}
+header,.nav-links{background:#08080cee!important;border-color:rgba(255,255,255,.1)!important}
+.nav-links>a:not(.btn),.brand-name,.hero h1,.trust b,.work-info h3,.demo-heading h3,.form-title,.contact-method a,.contact-method strong,.cta h2,.web-band h3,.rate-card h3,.package h3{color:#f7f7fb!important}
+.brand-caption,.hero-copy,.trust,.section-head p,.service-card p,.web-band p,.work-info p,.rate-card p,.package p,.package li,.contact-copy>p,.contact-method small,.form-sub,.footer-copy,.footer-links,.demo-service>p,.demo-thumbs figcaption{color:#a09fb2!important}
+.hero{background:radial-gradient(ellipse at 75% 20%,rgba(124,92,255,.12),transparent 38%),radial-gradient(ellipse at 100% 85%,rgba(32,217,255,.06),transparent 28%),#08080c!important}
+.hero:before{background:radial-gradient(circle,rgba(124,92,255,.22),transparent 68%)!important}
+.hero:after{color:rgba(124,92,255,.035)!important}
+.visual-frame,.floating,.browser-mock,.service-card,.work-card,.rate-card,.package,.contact-form,.demo-service{background:linear-gradient(145deg,#171722,#101018)!important;border-color:rgba(255,255,255,.12)!important;color:#f7f7fb!important;box-shadow:0 18px 45px rgba(0,0,0,.22)!important}
+.studio-photo{background:linear-gradient(140deg,#281b53,#11111c 55%,#063a48)!important}
+.floating,.floating b,.visual-title strong,.browser-content b{color:#f7f7fb!important}
+.floating small,.frame-top,.browser-head span{color:#a09fb2!important}
+.marquee{background:#ffffff05!important;border-color:rgba(255,255,255,.1)!important}
+.marquee span{color:#a09fb2!important}
+.service-card:hover,.work-card:hover,.rate-card:hover,.package:hover{background:#171722!important;border-color:rgba(124,92,255,.65)!important}
+.service-icon{background:rgba(124,92,255,.16)!important;border-color:rgba(124,92,255,.35)!important;color:#20d9ff!important}
+.web-band{background:radial-gradient(ellipse at 95% 10%,rgba(32,217,255,.08),transparent 40%),linear-gradient(120deg,#171329,#0e1018)!important;border-color:rgba(124,92,255,.35)!important}
+.web-tags span{color:#d4d0e8!important;background:#ffffff06!important;border-color:rgba(255,255,255,.12)!important}
+.browser-content{background:linear-gradient(135deg,#291c51,#11131c 60%,#0d4650)!important}
+.work-section,.rates-section,.demo-section{background:linear-gradient(180deg,rgba(124,92,255,.055),transparent)!important}
+.work-image{background:#171329!important}
+.category{background:#08080ce8!important;color:#f7f7fb!important;border-color:rgba(255,255,255,.18)!important}
+.work-arrow,.filter,.carousel-btn,.filter-btn{background:#14141f!important;color:#c9c4e8!important;border-color:rgba(255,255,255,.13)!important}
+.filter.active,.filter:hover,.filter-btn.active,.filter-btn:hover{background:rgba(124,92,255,.28)!important;color:#fff!important;border-color:#7c5cff!important}
+.step{border-top-color:rgba(124,92,255,.7)!important}
+.rate-price,.rate-cta,.service-card a,.step-num{color:#20d9ff!important}
+.rate-card.featured,.package.featured{background:radial-gradient(ellipse at top,rgba(124,92,255,.2),transparent 65%),#111119!important;border-color:rgba(124,92,255,.6)!important}
+.cta{background:radial-gradient(ellipse at 10% 0%,rgba(124,92,255,.18),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(32,217,255,.07),transparent 45%),#111019!important;border-color:rgba(124,92,255,.45)!important}
+.contact-method{border-bottom-color:rgba(255,255,255,.1)!important}
+.contact-icon{background:#171329!important;color:#20d9ff!important}
+.field label,.contact-form label{color:#d5d2e5!important}
+.field input,.field select,.field textarea,.contact-form input,.contact-form select,.contact-form textarea{background:#0a0a11!important;color:#f7f7fb!important;border-color:rgba(255,255,255,.16)!important}
+.field select option{background:#101018!important;color:#f7f7fb!important}
+.field input::placeholder,.field textarea::placeholder{color:#77758b!important}
+footer{background:#08080c!important;border-top-color:rgba(255,255,255,.12)!important}
+.footer-links a:hover{color:#20d9ff!important}
+.legal-trigger{background:#14141f!important;color:#e0def0!important;border-color:rgba(255,255,255,.15)!important}
+.legal-modal{background:rgba(0,0,0,.78)!important}
+.legal-dialog{background:linear-gradient(145deg,#171722,#0d0d14)!important;border-color:rgba(124,92,255,.4)!important}
+.legal-dialog h2,.legal-dialog h3{color:#f7f7fb!important}.legal-dialog p,.legal-dialog li{color:#c1bfd1!important}.legal-dialog a{color:#20d9ff!important}
+.legal-close,.back-top{background:#171722!important;color:#20d9ff!important;border-color:rgba(255,255,255,.16)!important}
+.demo-heading h3{color:#f7f7fb!important}.demo-heading strong,.demo-index{color:#20d9ff!important}
+@media(max-width:680px){.nav-links{background:#0b0b12f7!important}.secondary{background:#ffffff08!important;color:#f7f7fb!important}.hero{background:#08080c!important}}
